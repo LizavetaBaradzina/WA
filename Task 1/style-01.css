@@ -1,0 +1,47 @@
+body {
+    background-size: cover;
+}
+
+th {
+    background-color: #940a37;
+    height: 35px;
+}
+
+#deletebutton {
+    background-color: #d1274b;
+    width: 100%;
+}
+
+#changebutton {
+    background-color: #f88020; 
+    width: 100%;
+}
+
+#changebutton:hover {
+    background-color: #940a37;
+}
+
+#deletebutton:hover {
+    background-color: #940a37;
+}
+table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+table thead tr {
+    color: #ffffff; 
+    font-weight: bold; 
+    background: #e26241;
+}
+table thead tr td {
+    border: 1px solid #e26241;
+}
+table tbody tr td {
+    border: 1px solid #e8e9eb;
+}
+table tbody tr:nth-child(2n) {
+    background: #f4f4f4;
+}
+table tbody tr:hover {
+    background: #ffd369;
+}
