@@ -1,7 +1,10 @@
     window.onload = function()
     {
-        var first_name = this.prompt("Enter any name: ");
-        var second_name;
+        do {
+            var first_name = this.prompt("Enter any name: ");
+            var second_name;
+        }
+        while (!first_name);
         
         if (this.hasNumber(first_name) == true)
         {
