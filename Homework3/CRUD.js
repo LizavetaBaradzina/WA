@@ -4,8 +4,8 @@ function onCreate(ev) {
     var data = JSON.stringify({
         name: String(document.getElementById("cname").value),
         surname: String(document.getElementById("csurname").value),
-        number: String(document.getElementById("cnumber").value),
-        pin: String(document.getElementById("cpin").value),
+        acc: String(document.getElementById("cacc").value),
+        code: String(document.getElementById("ccode").value),
         balance: String(document.getElementById("cbalance").value)
     });
     console.log(data);
@@ -32,9 +32,11 @@ function onRead() {
     xhr.addEventListener("readystatechange", function() {
         if (this.readyState === 4) {
             result = JSON.parse(this.response);
+            console.log(result);
             var resultTBody = document.createElement("tbody");
             result.map(function(nthAccount) {
                 resultTBody.appendChild(parseAccountToTableRow(nthAccount));
+                console.log(nthAccount);
             });
 
             var table = document.getElementById("rTBody").parentElement;
@@ -80,8 +82,8 @@ function onUpdate(ev) {
     var data = JSON.stringify({
         name: String(document.getElementById("uname").value),
         surname: String(document.getElementById("usurname").value),
-        number: String(document.getElementById("unumber").value),
-        pin: String(document.getElementById("upin").value),
+        acc: String(document.getElementById("uacc").value),
+        code: String(document.getElementById("ucode").value),
         balance: String(document.getElementById("ubalance").value)
     });
     console.log(data);
@@ -128,18 +130,22 @@ function parseAccountToTableRow(account) {
 
     surname = document.createElement("td");
     surname.innerText = account["surname"];
+    console.log(account["surname"]);
     row.appendChild(surname);
 
-    number = document.createElement("td");
-    number.innerText = account["number"];
-    row.appendChild(number);
+    acc = document.createElement("td");
+    acc.innerText = account["acc"];
+    console.log(account["account"]);
+    row.appendChild(acc);
 
-    pin = document.createElement("td");
-    pin.innerText = account["pin"];
-    row.appendChild(pin);
+    code = document.createElement("td");
+    code.innerText = account["code"];
+    console.log(account["code"]);
+    row.appendChild(code);
 
     balance = document.createElement("td");
     balance.innerText = account["balance"];
+    console.log(account["balance"]);
     row.appendChild(balance);
 
     return row;

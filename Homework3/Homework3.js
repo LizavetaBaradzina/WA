@@ -1,8 +1,8 @@
-function Account(name, surname, number, pin, balance) {
+function Account(name, surname, acc, code, balance) {
     this.name = name;
     this.surname = surname;
-    this.number = number;
-    this.pin = pin;
+    this.acc = acc;
+    this.code = code;
     this.balance = balance;
 
     this.getName = function() {
@@ -21,20 +21,20 @@ function Account(name, surname, number, pin, balance) {
         this.surname = surname;
     };
 
-    this.getNumber = function() {
-        return this.number;
+    this.getAcc = function() {
+        return this.acc;
     };
 
-    this.setNumber = function(number) {
-        this.number = number;
+    this.setAcc = function(acc) {
+        this.acc = acc;
     };
 
-    this.getPin = function() {
-        return this.pin;
+    this.getCode = function() {
+        return this.code;
     };
 
-    this.setPin = function(pin) {
-        this.pin = pin;
+    this.setCode = function(code) {
+        this.code = code;
     };
 
     this.getBalance = function() {
@@ -52,21 +52,21 @@ var counter = 0;
 
 Account.prototype.AccountInfo = function() {
     return (
-        counter + " | " + this.getName() + " | " + this.getSurname() + " | " + this.getNumber() + " | " +  this.getPin() + " | " + this.getBalance() + "\n"
+        counter + " | " + this.getName() + " | " + this.getSurname() + " | " + this.getAcc() + " | " +  this.getCode() + " | " + this.getBalance() + "\n"
     );
 };
 
 function DisplayAccount(account) {
     var accountParagraph = document.createElement("p");
     accountParagraph.id = counter;
-    accountParagraph.innerHTML = counter + " | " + account.getName() + " | " + account.getSurname() + " | " + account.getNumber() + " | " + account.getPin() + " | " + account.getBalance();
+    accountParagraph.innerHTML = counter + " | " + account.getName() + " | " + account.getSurname() + " | " + account.getAcc() + " | " + account.getCode() + " | " + account.getBalance();
     document.body.appendChild(accountParagraph);
 }
 
-var account1 = new Account("Yury", "Karlianok", 2233114499007766, 3241, 340.15);
+var account1 = new Account("Vanya", "Pupkin", 1234567890001111, 1124, 100);
 alert(account1.AccountInfo());
 DisplayAccount(account1);
 
-var account2 = new Account("Lizaveta", "Baradina", 9944773300881122, 6987, 2514.98);
+var account2 = new Account("Petya", "Puzikov", 109987653211234, 8934, 2500 );
 alert(account2.AccountInfo());
 DisplayAccount(account2);
